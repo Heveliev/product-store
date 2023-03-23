@@ -47,7 +47,7 @@ export function ModalWindow({id,values}) {
               <ModalBody>
                   <form onSubmit={handleSubmit}>
            <FormControl>
-            <FormLabel>Name</FormLabel>
+            <FormLabel>Title</FormLabel>
                       <Input
                               placeholder="Title"
                               type="text"
