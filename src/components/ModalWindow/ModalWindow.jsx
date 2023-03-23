@@ -13,7 +13,7 @@ import {
 } from "@chakra-ui/react";
  import { Notify } from "notiflix";
 import { useDispatch, useSelector } from "react-redux";
-import { editProduct, fetchAllProducts } from "redux/products/products-thunk";
+import { editProduct } from "redux/products/products-thunk";
 import { getIsOpen } from "redux/modal/modal-select";
 import { isOpen } from "redux/modal/modal-slice";
 
