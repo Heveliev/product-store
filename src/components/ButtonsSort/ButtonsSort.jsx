@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getSort } from 'redux/sort/sort-selector';
 import { sort } from 'redux/sort/sort-slice';
 
-export const ButtonSort = () => {
+export const ButtonsSort = () => {
     const dispatch = useDispatch();
     const sortType = useSelector(getSort);
 

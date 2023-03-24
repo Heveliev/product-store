@@ -23,7 +23,7 @@ const initialValues = {
     title: '',
     author: '',
     year: 1995,
-    rating:0,
+    rating:1,
 }
 
 const FormError = ({ name }) => {
