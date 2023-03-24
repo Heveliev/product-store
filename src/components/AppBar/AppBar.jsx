@@ -14,7 +14,6 @@ export const AppBar = () => {
         <Flex fontSize="xl" bg="gray.700" w="100%" p={4} color="white" alignItems="center">
           <Box marginRight="15px"><NavLink  to='/'>Products</NavLink></Box>
          
-          <NavLink  to ='/add-product'>Add new product</NavLink>
             <Spacer />
       <HStack spacing={4}>
         <IconButton

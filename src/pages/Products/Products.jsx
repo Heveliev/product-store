@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getIsLoading, getProducts } from "redux/products/products-selectors";
 import { fetchAllProducts } from "redux/products/products-thunk";
+import { AddNewProduct } from "components/AddNewProduct/AddNewProduct";
 
 const Products = () => {
     const dispatch = useDispatch();
@@ -18,6 +19,7 @@ const Products = () => {
     
     return(
         <>
+            <AddNewProduct/>
             {loading ?
                 <Box position="fixed"
                     left="50%"

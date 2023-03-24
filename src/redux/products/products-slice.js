@@ -20,12 +20,17 @@ const handleDeleteProducts = (state, action) => {
   state.items.splice(idx, 1);
 };
 const handleEditProducts = (state, action) => {
-   const { id, updatedProduct } = action.payload;
-  const index = state.items.findIndex(item => item.id === id);
-  if (index !== -1) {
-    state.items[index] = { ...state.items[index], ...updatedProduct };
-  }
-};
+ const { id, title } = action.payload;
+  const updatedItems = state.items.map(item => {
+    if (item.id === id) {
+      return { ...item, title };
+    }
+    return item;
+  });
+  return { ...state, items: updatedItems };
+
+  };
+
 
 export const productsSlice = createSlice({
     name: 'products',

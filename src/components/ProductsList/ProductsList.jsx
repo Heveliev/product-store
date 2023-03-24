@@ -31,16 +31,15 @@ export const ProductsList = () => {
     <Stack padding="10px" spacing={4}>
       {filterProducts().map(product => (
         <Flex key={product.id} align="center" position="relative">
-          <Image border="green 3px solid" boxSize="100px" objectFit="cover" src={product.images[0]} alt={product.title} />
+          {product.images[0] &&
+            <Image border="green 3px solid" boxSize="100px" objectFit="cover" src={product.images[0]} alt={product.title} />}
           <Box ml={4}>
             <Text fontWeight="bold">{product.title}</Text>
-            <Text>{product.description}</Text>
-            <Text fontSize="xl" fontWeight="bold" mt={2}>
-              ${product.price}
-            </Text>
-            <Text>Rating: {product.rating}</Text>
-            <Text>Stock: {product.stock}</Text>
-            <Text>Category: {product.category}</Text>
+            {product.description && <Text>{product.description}</Text>}
+            {product.price && <Text fontSize="xl" fontWeight="bold" mt={2}>${product.price}</Text>}
+            {product.rating && <Text>Rating: {product.rating}</Text>}
+            {product.stock && <Text>Stock: {product.stock}</Text>}
+            {product.category && <Text>Category: {product.category}</Text>}
           </Box>
           <Spacer />
           <Box><IconButton
