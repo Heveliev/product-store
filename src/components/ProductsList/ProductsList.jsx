@@ -8,24 +8,52 @@ import { getIsOpen } from "redux/modal/modal-select";
 import { useState } from "react";
 import { isOpen } from 'redux/modal/modal-slice';
 import { ModalWindow } from "components/ModalWindow/ModalWindow";
+import { getSort } from "redux/sort/sort-selector";
+
 
 export const ProductsList = () => {
    const [id, setId] = useState();
   const dispatch = useDispatch();
   const products = useSelector(getProducts)
   const filter = useSelector(getFilter);
-    const isOpenModal = useSelector(getIsOpen);
+  const isOpenModal = useSelector(getIsOpen);
+  const sortType = useSelector(getSort);
   
+
+
+  const sortProducts = (products, sortType) => {
+    switch (sortType) {
+      case 'priceAsc':
+        return [...products].sort((a, b) => a.price - b.price);
+      case 'priceDesc':
+        return [...products].sort((a, b) => b.price - a.price);
+      case 'ratingAsc':
+        return [...products].sort((a, b) => a.rating - b.rating);
+      case 'ratingDesc':
+        return [...products].sort((a, b) => b.rating - a.rating);
+      case 'stockAsc':
+        return [...products].sort((a, b) => a.stock - b.stock);
+      case 'stockDesc':
+        return [...products].sort((a, b) => b.stock - a.stock);
+      default:
+        return products;
+    }
+  };
+  const sortedProducts = sortProducts(products, sortType);
     const filterProducts = () => {
-      return products?.filter(product =>
+      return sortedProducts?.filter(product =>
         product.title.toLowerCase().includes(filter) ||
       product.category.toLowerCase().includes(filter))
   }
     
+
+
+
   
  const findProduct = id => {
   return products?.find(item => item.id === id);
 };
+  
 
     return ( <>
     <Stack padding="10px" spacing={4}>

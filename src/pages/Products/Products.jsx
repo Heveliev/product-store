@@ -19,7 +19,7 @@ const Products = () => {
     
     return(
         <>
-            <AddNewProduct/>
+            
             {loading ?
                 <Box position="fixed"
                     left="50%"
@@ -32,7 +32,8 @@ const Products = () => {
                         size='xl'
                     />
                 </Box>
-                : <><Heading textAlign="center">Products list:</Heading>
+                : <><AddNewProduct />
+                    <Heading textAlign="center">Products list:</Heading>
                     <InputFilter />
                     {products?.length ? <ProductsList /> : <Heading margin="20px">Sorry, but we have sold all the products</Heading>}
                     </>}

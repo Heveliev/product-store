@@ -1,6 +1,7 @@
 import { Input,Box,Text } from "@chakra-ui/react"
 import { useDispatch } from "react-redux";
 import { filter } from "redux/filter/filter-slice";
+import { ButtonSort } from "components/ButtonSort/ButtonSort";
 
 export const InputFilter = () => {
     const dispatch = useDispatch();
@@ -17,7 +18,7 @@ export const InputFilter = () => {
         name="name"
         placeholder="Search products"
         mb={4}
-      />     
+      />     <ButtonSort/>
           </Box>
         )
 }
