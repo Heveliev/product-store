@@ -40,10 +40,11 @@ export const ProductsList = () => {
     }
   };
   const sortedProducts = sortProducts(products, sortType);
+
     const filterProducts = () => {
       return sortedProducts?.filter(product =>
         product.title.toLowerCase().includes(filter) ||
-      product.category.toLowerCase().includes(filter))
+      product.category?.toLowerCase().includes(filter))
   }
     
 
@@ -59,7 +60,7 @@ export const ProductsList = () => {
     <Stack padding="10px" spacing={4}>
       {filterProducts().map(product => (
         <Flex key={product.id} align="center" position="relative">
-          {product.images &&
+          {product.images.length &&
             <Image border="green 3px solid" boxSize="100px" objectFit="cover" src={product.images[0]} alt={product.title} />}
           <Box ml={4}>
             <Text fontWeight="bold">{product.title}</Text>
