@@ -16,8 +16,9 @@ dispatch(sort(type))
 
   return (
     <>
-      <ButtonGroup variant="outline" spacing={4}>
+      <ButtonGroup margin="0" display="flex" flexWrap="wrap" variant="outline" rowGap="10px" >
         <Button
+          margin="0 0 0 8px"
           leftIcon={<Icon as={sortType === "priceAsc" ? FaSortAmountUp : FaSortAmountDown} />}
           onClick={() => handleSort(sortType === "priceAsc" ? "priceDesc" : "priceAsc")}
         >
