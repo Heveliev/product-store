@@ -69,6 +69,8 @@ export const ProductsList = () => {
             {product.rating && <Text>Rating: {product.rating}</Text>}
             {product.stock && <Text>Stock: {product.stock}</Text>}
             {product.category && <Text>Category: {product.category}</Text>}
+            {product.thumbnail.author && <Text height="55px">Author: {product.thumbnail.author}</Text>}
+            {product.thumbnail.year && <Text height="55px">Year: {product.thumbnail.year}</Text>}
           </Box>
           <Spacer />
           <Box><IconButton
